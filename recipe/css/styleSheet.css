@@ -1,0 +1,10 @@
+.homePictures{
+    height: 350px !important;
+    width: 25% !important;
+    /*display: flex;*/
+}
+
+.recipePicture{
+    max-height: 100px !important;
+    width: 100% !important;
+}
