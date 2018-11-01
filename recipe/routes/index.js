@@ -21,8 +21,7 @@ var recipe = [
     name: 'Ham Fried Rice',
     imageUrl: 'images/img/bg-img/ham_fried_rice.jpg',
     instructions: 'Cool rice',
-    ingredients: 'rice'
-
+    ingredients: 'rice'+'\n'+'ham'
   },
   {
     name: 'Green Chile Chicken Enchiladas',

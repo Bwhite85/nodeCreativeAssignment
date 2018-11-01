@@ -164,8 +164,8 @@
                         <ul ng-if='recipe.length' class='list center stretch'>
                             <li ng-repeat='p in recipe' class='recipe'>
                                 <h1>{{ p.name }}</h1>
-                                <h2>{{ p.ingredients }}</h2>
-                                <h3>{{ p.instructions }}</h3>
+                                <h3>{{ p.ingredients }}</h3>
+                                <h5>{{ p.instructions }}</h5>
                                 <img class='image' ng-src="{{p.imageUrl}}" />
                             </li>
                         </ul>
