@@ -30,13 +30,14 @@ function mainCtrl($scope, recipeFetcher,$http) {
   $scope.addRecipe = function() {
     var formData = { name: $scope.Name, imageUrl: $scope.Url, instructions: $scope.Instructions, ingredients: $scope.Ingredients };
     console.log(formData);
-    var recipeURL = 'recipe';
+    var recipeURL = '/recipe';
     $http({
       url: recipeURL,
       method: "POST",
       data: formData
     }).success(function(data, status, headers, config) {
       console.log("Post worked");
+      window.alert('Recipe added successfully, reload the page to see your new recipe!');
     }).error(function(data, status, headers, config) {
       console.log("Post failed");
     });
