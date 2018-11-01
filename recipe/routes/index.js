@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var request = require('request');
+//var request = require('request');
 
 /* GET home page. */
+router.get('/', function(req, res, next) {
+    res.render('index', {title: 'Express'});
+});
 router.get('/', function(req, res) {
-  res.sendFile('addRecipe.html', { root: 'public' });
+  res.sendFile('index', { root: 'public' });
 });
 
 var recipe = [
