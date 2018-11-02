@@ -17,6 +17,9 @@
     <!-- Core Stylesheet -->
     <link href="stylesheets/style.css" rel="stylesheet">
 
+    <!-- Core Stylesheet -->
+    <link href="stylesheets/css/styleSheet.css" rel="stylesheet">
+
     <!-- Responsive CSS -->
     <link href="stylesheets/css/responsive/responsive.css" rel="stylesheet">
 
@@ -123,14 +126,14 @@
         <!--        </div>-->
         <!--    </div>-->
         <!--</div>-->
-        <div class="contact-form-area justify:center">
+        <div ng-app='app' ng-controller='mainCtrl'>
             <div class="row">
                 <div class="col-12 col-md-5">
                     <div class="contact-form-sidebar item wow fadeInUpBig" data-wow-delay="0.3s" style="background-image: url(images/img/bg-img/contact.jpg);">
                     </div>
                 </div>
                 <div class="col-12 col-md-7 item">
-                    <div class="contact-form wow fadeInUpBig" data-wow-delay="0.6s" id='app' ng-app='app' ng-controller='mainCtrl'>
+                    <div class="contact-form wow fadeInUpBig" data-wow-delay="0.6s" id='app'>
 
                         <!-- Contact Form -->
 
@@ -156,64 +159,78 @@
                             </div>
                             <button type="submit" class="btn contact-btn">Add Recipe</button>
                         </form>
-                        <div ng-if='!recipe.length' class='no-recipe center stretch'>
-                            <h1 class='h1'>
-                                Set up your endpoint at `/recipe` to get this view working
-                            </h1>
-                        </div>
-                        <ul ng-if='recipe.length' class='list center stretch'>
-                            <li ng-repeat='p in recipe' class='recipe'>
-                                <h1>{{ p.name }}</h1>
-                                <h3>{{ p.ingredients }}</h3>
-                                <h5>{{ p.instructions }}</h5>
-                                <img class='image' ng-src="{{p.imageUrl}}" />
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- ****** Categories Area Start ****** -->
-        <div class="logo_area text-center">
-            <a href="../index.html" class="yummy-logo">Recipes</a>
-        </div>
-        <section class="categories_area clearfix" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="single_catagory wow fadeInUp" data-wow-delay=".3s">
-                            <img src="images/img/catagory-img/1.jpg" alt="">
-                            <div class="catagory-title">
-                                <a href="refrigerator.html">
-                                    <h5>Refrigerator</h5>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 recipePicture">
-                        <div class="single_catagory wow fadeInUp" data-wow-delay=".6s">
-                            <img src="images/img/bg-img/honey-garlic-chicken-stir-fry.jpg" class="recipePicture" alt="">
-                            <div class="catagory-title">
-                                <a href="#">
-                                    <h5>Garlic Chicken Stir-fry</h5>
-                                </a>
-                                <div class="post-date-commnents d-flex">
-                                    <a style="color: white" href="#">Check your fridge for the ingredients!</a>
+            <div class="logo_area text-center">
+                <a href="index.html" class="yummy-logo">Recipes</a>
+            </div>
+            <section class="categories_area clearfix" id="displayArea">
+                <div ng-if='!recipe.length' class='no-recipe center stretch'>
+                    <h1 class='h1'>
+                        Set up your endpoint at `/recipe` to get this view working
+                    </h1>
+                </div>
+                <div ng-if='recipe.length' class='categories_area clearfix'>
+                    <div class="container">
+                        <div class="row">
+                            <div class='col-12 col-md-6 col-lg-4'>
+                                <div class="single_catagory wow fadeInUp" data-wow-delay=".3s">
+                                    <div ng-repeat='p in recipe'>
+                                        <h1>{{ p.name }}</h1>
+                                        <h3>{{ p.ingredients }}</h3>
+                                        <h5>{{ p.instructions }}</h5>
+                                        <img ng-src="{{p.imageUrl}}" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="single_catagory wow fadeInUp" data-wow-delay=".9s">
-                            <img src="images/img/catagory-img/3.jpg" alt="">
-                            <div class="catagory-title">
-                                <a href="addRecipe.html">
-                                    <h5>Add Recipe</h5>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+            </section>
+        </div>
+
+        <!-- ****** Categories Area Start ****** -->
+        <!--<div class="logo_area text-center">-->
+        <!--    <a href="../index.html" class="yummy-logo">Recipes</a>-->
+        <!--</div>-->
+        <!--<section class="categories_area clearfix" id="about">-->
+        <!--    <div class="container">-->
+        <!--        <div class="row">-->
+        <!--            <div class="col-12 col-md-6 col-lg-4">-->
+        <!--                <div class="single_catagory wow fadeInUp" data-wow-delay=".3s">-->
+        <!--                    <img src="images/img/catagory-img/1.jpg" alt="">-->
+        <!--                    <div class="catagory-title">-->
+        <!--                        <a href="refrigerator.html">-->
+        <!--                            <h5>Refrigerator</h5>-->
+        <!--                        </a>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="col-12 col-md-6 col-lg-4 recipePicture">-->
+        <!--                <div class="single_catagory wow fadeInUp" data-wow-delay=".6s">-->
+        <!--                    <img src="images/img/bg-img/honey-garlic-chicken-stir-fry.jpg" class="recipePicture" alt="">-->
+        <!--                    <div class="catagory-title">-->
+        <!--                        <a href="#">-->
+        <!--                            <h5>Garlic Chicken Stir-fry</h5>-->
+        <!--                        </a>-->
+        <!--                        <div class="post-date-commnents d-flex">-->
+        <!--                            <a style="color: white" href="#">Check your fridge for the ingredients!</a>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--            <div class="col-12 col-md-6 col-lg-4">-->
+        <!--                <div class="single_catagory wow fadeInUp" data-wow-delay=".9s">-->
+        <!--                    <img src="images/img/catagory-img/3.jpg" alt="">-->
+        <!--                    <div class="catagory-title">-->
+        <!--                        <a href="addRecipe.html">-->
+        <!--                            <h5>Add Recipe</h5>-->
+        <!--                        </a>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
                 <!--<div id='app' ng-app='app' ng-controller='mainCtrl'>-->
                 <!--    <h1> Enter A New Recipe</h1>-->
                 <!--    <form id="newRecipe" ng-submit="addRecipe()">-->
@@ -232,8 +249,8 @@
                 <!--        </li>-->
                 <!--    </ul>-->
                 <!--</div>-->
-            </div>
-        </section>
+        <!--    </div>-->
+        <!--</section>-->
         <!-- ****** Categories Area End ****** -->
     </body>
 

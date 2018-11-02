@@ -18,7 +18,7 @@ function recipeFetcher($http) {
 
 }
 
-function mainCtrl($scope, recipeFetcher,$http) {
+function mainCtrl($scope, recipeFetcher, $http) {
 
   $scope.recipe = [];
 

@@ -20,7 +20,7 @@ var recipe = [
   {
     name: 'Ham Fried Rice',
     imageUrl: 'images/img/bg-img/ham_fried_rice.jpg',
-    instructions: 'Cool rice',
+    instructions: 'Cook rice',
     ingredients: 'rice'+'\n'+'ham'
   },
   {
